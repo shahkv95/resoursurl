@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resoursurl</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light-theme">
+    <div class="theme-toggle">
+        <label class="switch">
+            <input type="checkbox" onchange="toggleTheme()">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <header>
+        <img src="assets/logo.png" alt="Resoursurl Logo" class="logo">
+        <h1>Resoursurl</h1>
+        <p>Your gateway to the best resources on the web</p>
+    </header>
+
+    <nav class="category-nav">
+        <button class="dropbtn" onclick="filterResources('ai')">AI</button>
+        <button class="dropbtn" onclick="filterResources('machine-learning')">Machine Learning</button>
+        <button class="dropbtn" onclick="filterResources('others')">Others</button>
+    </nav>
+
+    <div class="container">
+        <section id="resources">
+            <!-- AI Tools cards -->
+            <div class="resource-card" data-category="ai-tools"
+                onclick="showDetails('AI Tool 1', 'A powerful tool for AI development.', 'https://example.com/ai-tools')">
+                <h3>AI Tool 1</h3>
+                <p>A powerful tool for AI development.</p>
+            </div>
+            <div class="resource-card" data-category="ai-tools"
+                onclick="showDetails('AI Tool 2', 'Another valuable AI tool.', 'https://example.com/ai-tools2')">
+                <h3>AI Tool 2</h3>
+                <p>Another valuable AI tool.</p>
+            </div>
+
+            <!-- AI Research cards -->
+            <div class="resource-card" data-category="ai-research"
+                onclick="showDetails('AI Research 1', 'Innovative AI research and findings.', 'https://example.com/ai-research')">
+                <h3>AI Research 1</h3>
+                <p>Innovative AI research and findings.</p>
+            </div>
+
+            <!-- Others Category -->
+            <div class="resource-card" data-category="others"
+                onclick="showDetails('General Resource', 'Various useful resources not in other categories.', 'https://example.com/general-resources')">
+                <h3>General Resource</h3>
+                <p>Various useful resources not in other categories.</p>
+            </div>
+        </section>
+
+        <section id="resource-details" style="display: none;">
+            <h2 id="resource-title"></h2>
+            <p id="resource-description"></p>
+            <a id="resource-link" target="_blank">Open in new tab</a>
+            <iframe id="resource-iframe" src="" frameborder="0"></iframe>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
